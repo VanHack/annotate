@@ -27,7 +27,7 @@ ContentDetail.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    const id = ownProps.match.params.id
+    const id = +ownProps.match.params.id
     const item = state.response.items.filter(item => item.id === id)
     return {
       item: item[0]
