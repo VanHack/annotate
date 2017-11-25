@@ -5,20 +5,16 @@ export const REQUEST_CONTENT = 'LOAD_CONTENT'
 export const RECEIVE_CONTENT = 'RECEIVE_CONTENT'
 export const REQUEST_REJECTED = 'REQUEST_REJECTED'
 
-export const IS_MOCKED = true
-
-let nextId = 0;
-
 function requestContent() {
   return {
     type: REQUEST_CONTENT
   }
 }
 
-function receiveContent(json) {
+function receiveContent(items) {
   return {
     type: RECEIVE_CONTENT,
-    items: [Object.assign({}, json, {id: nextId++})]
+    items: items
   }
 }
 

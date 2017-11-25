@@ -1,5 +1,10 @@
 .content-container {
     padding: 2% 6%;
+    margin-top: 60px;
+}
+
+.content-container h4 {
+    margin-left: 30px;
 }
 
 img {

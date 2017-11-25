@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { Card, CardTitle } from 'react-materialize';
+import './Content.css'
 
 const Content = ({ id, title, description, image }) => (
   <NavLink to={`/detail/${ id }`} role="navigation" aria-controls="article" tabIndex="0">

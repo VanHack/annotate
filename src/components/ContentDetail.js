@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import 'hypothesis'  
+import './ContentDetail.css'
 
 const ContentDetail = ({ item }) => (
-    <div className="content-container" role="article">
+    <div className="article" role="article">
         <h3>{item.title}</h3>
         <div dangerouslySetInnerHTML={{__html: item.content}}>
         </div>
@@ -22,7 +23,6 @@ ContentDetail.propTypes = {
             url: PropTypes.string.isRequired,
             author: PropTypes.string.isRequired,
             author_url: PropTypes.string.isRequired
-        
       }).isRequired
 }
 

@@ -12,9 +12,14 @@ class ContentList extends Component {
   }
 
   render() {
-    const { items } = this.props
+    const { items, isLoading } = this.props
     return (
       <div role="list" aria-live="polite">
+        {isLoading 
+          ? <h4 className="brown-text text-lighten-3" aria-live="polite">Loading articles...</h4>
+          : <h4 className="brown-text text-lighten-1" aria-live="polite"> Top articles </h4> 
+        }
+        <div className="divider"></div>
         {items.map(item => (
           <Content key={item.id} {...item} />
         ))}
@@ -42,7 +47,8 @@ ContentList.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    items: state.response.items || []
+    items: state.response.items || [],
+    isLoading: state.request.isLoadingContent
   }
 }
 

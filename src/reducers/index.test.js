@@ -5,7 +5,7 @@ import {
   REQUEST_REJECTED
 } from '../actions'
 
-describe('annotate reducer', () => {
+
   it('should return the initial state', () => {
     expect(annotateReducer(undefined, {})).toEqual({
       request: {},
@@ -124,4 +124,3 @@ describe('annotate reducer', () => {
       }
     })
   })
-})

@@ -1,5 +1,11 @@
 .nav-wrapper {
     padding-left: 28px;
-    padding-right: 28px;
-    margin-bottom: 40px;
+    padding-right: 42px;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
 }
