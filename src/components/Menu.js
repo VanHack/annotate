@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Navbar, NavItem } from 'react-materialize';
+import { Navbar } from 'react-materialize';
 import './Menu.css'
 
 const Menu = () => (
     <Navbar brand='Annotate' href="/#" right>
-        <NavLink to="/">
-            <NavItem>Home</NavItem>
+        <NavLink to="/" role="navigation" aria-controls="home" tabIndex="0">
+            Home
         </NavLink>
     </Navbar>
 )

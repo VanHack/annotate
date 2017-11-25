@@ -11,6 +11,11 @@ function request(state = {}, action) {
             return Object.assign({}, state, {
                 isLoadingContent: true
             })
+        case REQUEST_REJECTED:
+        case RECEIVE_CONTENT:
+            return Object.assign({}, state, {
+                isLoadingContent: false
+            })
         default:
             return state
     }
@@ -19,21 +24,16 @@ function request(state = {}, action) {
 function response(state = {}, action) {
     switch (action.type) {
         case REQUEST_REJECTED:
-            console.log("rejected")
-            console.log(action.reason)
             return Object.assign({}, state, {
                 rejected: true,
                 reasonForRejection: action.reason
             })
         case RECEIVE_CONTENT:
-            console.log("accepted")
-            console.log(action.items)
             var ns = Object.assign({}, state, {
                 rejected: false,
                 reasonForRejection: null,
                 items: action.items
             })
-            console.log(ns)
             return ns
         default:
             return state;

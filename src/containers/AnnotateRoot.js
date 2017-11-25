@@ -12,9 +12,9 @@ const store = configureStore()
 const AnnotateRoot = () => (
   <Provider store={store}>
     <Router>
-    <div class="app-container">
+    <div className="app-container">
     <Menu/>
-      <div class="content-container">
+      <div className="content-container">
       <Switch>
         <Route exact path="/detail/:id" component={ContentDetail} />
         <Route path="/" component={ContentList} />

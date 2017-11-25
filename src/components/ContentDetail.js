@@ -2,10 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import 'hypothesis'  
-import { Card } from 'react-materialize';
 
 const ContentDetail = ({ item }) => (
-    <div class="content-container">
+    <div className="content-container" role="article">
         <h3>{item.title}</h3>
         <div dangerouslySetInnerHTML={{__html: item.content}}>
         </div>
@@ -29,9 +28,7 @@ ContentDetail.propTypes = {
 
 const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id
-    console.log(id)
-    console.log(state)
-    const item = state.response.items.filter(item => item.id == id)
+    const item = state.response.items.filter(item => item.id === id)
     return {
       item: item[0]
     }

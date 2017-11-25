@@ -4,10 +4,13 @@ import { NavLink } from 'react-router-dom'
 import { Card, CardTitle } from 'react-materialize';
 
 const Content = ({ id, title, description, image }) => (
-  <NavLink to={`/detail/${ id }`}>
-  <Card className="medium" header={<CardTitle image={`${image}`}>{title}</CardTitle>}>
+  <NavLink to={`/detail/${ id }`} waves='light' role="navigation" aria-controls="article" tabIndex="0">
+    <Card className="medium" role="article"
+    header={
+      <CardTitle image={`${image}`}>{title}</CardTitle>
+    }>
       {description}
-  </Card>
+    </Card>
   </NavLink>
 )
 

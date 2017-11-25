@@ -32,6 +32,7 @@ function requestRejected(reason) {
 export function fetchContent() {
   return dispatch => {
     dispatch(requestContent())
+    //TODO: replace mock with actual API endpoints
     return fetch(`../html.json`)
       .then(
         response => dispatch(receiveContent(mock)),

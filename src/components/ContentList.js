@@ -14,7 +14,7 @@ class ContentList extends Component {
   render() {
     const { items } = this.props
     return (
-      <div>
+      <div role="list" aria-live="polite">
         {items.map(item => (
           <Content key={item.id} {...item} />
         ))}
@@ -41,7 +41,6 @@ ContentList.propTypes = {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     items: state.response.items || []
   }
